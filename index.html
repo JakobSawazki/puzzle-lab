@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#071015">
+    <meta
+      name="description"
+      content="Puzzle Lab von Sawazki Electronics: lade ein Bild hoch oder spiele mit Neon-Motiven."
+    >
+    <title>Puzzle Lab | Games Lab</title>
+    <link rel="icon" href="./assets/games-lab-logo.png" type="image/png">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="lab-brand" href="https://jakobsawazki.github.io/mini-games/" aria-label="Zur Games-Lab-Startseite">
+          <img src="./assets/games-lab-logo.png" alt="" aria-hidden="true">
+          <span>
+            <strong>Games Lab</strong>
+            <small>Designed by Sawazki Electronics</small>
+          </span>
+        </a>
+        <nav class="topnav" aria-label="Spielnavigation">
+          <a href="https://jakobsawazki.github.io/mini-games/">Startseite</a>
+          <a href="https://jakobsawazki.github.io/mini-games/#games">Game Shelf</a>
+        </nav>
+      </header>
+
+      <main class="game-layout">
+        <section class="game-stage" aria-labelledby="gameTitle">
+          <div class="stage-heading">
+            <p class="eyebrow">Bild-Puzzle-Game</p>
+            <h1 id="gameTitle">Puzzle Lab</h1>
+          </div>
+
+          <div class="board-wrap">
+            <div id="puzzleBoard" class="puzzle-board" aria-label="Puzzle Spielfeld"></div>
+            <div id="completeBanner" class="complete-banner" hidden>
+              <strong>Gelöst</strong>
+              <span id="completeSummary"></span>
+            </div>
+          </div>
+        </section>
+
+        <aside class="control-panel" aria-label="Puzzle Einstellungen">
+          <section class="panel-section">
+            <p class="section-label">Bild</p>
+            <label class="upload-drop">
+              <input id="imageUpload" type="file" accept="image/*">
+              <span>Eigenes Bild hochladen</span>
+            </label>
+            <div id="sampleList" class="sample-list" aria-label="Beispielbilder"></div>
+          </section>
+
+          <section class="panel-section">
+            <p class="section-label">Schwierigkeit</p>
+            <div id="difficultyButtons" class="difficulty-buttons" role="group" aria-label="Schwierigkeitsstufe wählen"></div>
+          </section>
+
+          <section class="panel-section">
+            <p class="section-label">Status</p>
+            <div class="stat-grid">
+              <div>
+                <span>Züge</span>
+                <strong id="moveCount">0</strong>
+              </div>
+              <div>
+                <span>Zeit</span>
+                <strong id="timer">00:00</strong>
+              </div>
+              <div>
+                <span>Teile</span>
+                <strong id="pieceCount">9</strong>
+              </div>
+              <div>
+                <span>Fortschritt</span>
+                <strong id="progressCount">0/9</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel-section">
+            <p class="section-label">Vorschau</p>
+            <img id="previewImage" class="preview-image" src="./assets/samples/puzzle-lab.jpg" alt="Aktuelles Puzzle-Motiv">
+          </section>
+
+          <div class="panel-actions">
+            <button id="shuffleButton" class="primary-button" type="button">Neu mischen</button>
+            <button id="previewToggle" class="secondary-button" type="button" aria-pressed="false">Vorschau zeigen</button>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="./game.js"></script>
+  </body>
+</html>
