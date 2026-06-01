@@ -41,6 +41,7 @@ Live-Seiten:
 ## Assets
 
 - `assets/games-lab-logo.png`: Games-Lab-Logo.
+- `assets/puzzle-lab-logo.png`: Eigenes Puzzle-Lab-Logo für Header und Browser-Icon.
 - `assets/samples/forest-stream.jpg`: Acryl-Naturmotiv Waldlichtung.
 - `assets/samples/mountain-lake.jpg`: Acryl-Naturmotiv Bergsee.
 - `assets/samples/coastal-meadow.jpg`: Acryl-Naturmotiv Küstenwiese.
@@ -56,6 +57,7 @@ Die Beispielbilder wurden als Rasterbilder generiert und lokal ins Projekt kopie
 puzzle-lab/
   assets/
     games-lab-logo.png
+    puzzle-lab-logo.png
     samples/
       coastal-meadow.jpg
       forest-stream.jpg
@@ -77,7 +79,8 @@ puzzle-lab/
 | --- | --- | --- |
 | v0.1 | `733979c` | Erstes Puzzle Lab mit Upload, Beispielbildern und drei Schwierigkeitsstufen |
 | v0.2 | `205067e` | Futuristische Beispielbilder durch Acryl-Naturmotive ersetzt |
-| v0.3 | aktueller Stand | Jigsaw-Teile, separate Ablage, Puzzle-Tisch, ausblendbarer Status und drei Tiermotive |
+| v0.3 | `4d8cafd` | Jigsaw-Teile, separate Ablage, Puzzle-Tisch, ausblendbarer Status und drei Tiermotive |
+| v0.4 | aktueller Stand | Eigenes Puzzle-Lab-Logo und links ausgerichtete Stage-Überschrift |
 
 ## Lokale Entwicklung
 

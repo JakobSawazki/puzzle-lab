@@ -9,19 +9,25 @@
       content="Puzzle Lab von Sawazki Electronics: lade ein Bild hoch oder spiele mit Natur- und Tiermotiven."
     >
     <title>Puzzle Lab | Games Lab</title>
-    <link rel="icon" href="./assets/games-lab-logo.png" type="image/png">
+    <link rel="icon" href="./assets/puzzle-lab-logo.png" type="image/png">
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
     <div class="app-shell">
       <header class="topbar">
-        <a class="lab-brand" href="https://jakobsawazki.github.io/mini-games/" aria-label="Zur Games-Lab-Startseite">
-          <img src="./assets/games-lab-logo.png" alt="" aria-hidden="true">
-          <span>
-            <strong>Games Lab</strong>
-            <small>Designed by Sawazki Electronics</small>
-          </span>
-        </a>
+        <div class="brand-stack">
+          <a class="lab-brand" href="https://jakobsawazki.github.io/mini-games/" aria-label="Zur Games-Lab-Startseite">
+            <img src="./assets/games-lab-logo.png" alt="" aria-hidden="true">
+            <span>
+              <strong>Games Lab</strong>
+              <small>Designed by Sawazki Electronics</small>
+            </span>
+          </a>
+          <div class="game-brand" aria-label="Puzzle Lab">
+            <img src="./assets/puzzle-lab-logo.png" alt="" aria-hidden="true">
+            <span>Puzzle Lab</span>
+          </div>
+        </div>
         <nav class="topnav" aria-label="Spielnavigation">
           <a href="https://jakobsawazki.github.io/mini-games/">Startseite</a>
           <a href="https://jakobsawazki.github.io/mini-games/#games">Game Shelf</a>
@@ -31,8 +37,8 @@
       <main class="game-layout">
         <section class="game-stage" aria-labelledby="gameTitle">
           <div class="stage-heading">
-            <p class="eyebrow">Bild-Puzzle-Game</p>
             <h1 id="gameTitle">Puzzle Lab</h1>
+            <p class="eyebrow">Bild-Puzzle-Game</p>
           </div>
 
           <div class="puzzle-workbench">
