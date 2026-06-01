@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#071015">
     <meta
       name="description"
-      content="Puzzle Lab von Sawazki Electronics: lade ein Bild hoch oder spiele mit Neon-Motiven."
+      content="Puzzle Lab von Sawazki Electronics: lade ein Bild hoch oder spiele mit Natur- und Tiermotiven."
     >
     <title>Puzzle Lab | Games Lab</title>
     <link rel="icon" href="./assets/games-lab-logo.png" type="image/png">
@@ -35,12 +35,28 @@
             <h1 id="gameTitle">Puzzle Lab</h1>
           </div>
 
-          <div class="board-wrap">
-            <div id="puzzleBoard" class="puzzle-board" aria-label="Puzzle Spielfeld"></div>
-            <div id="completeBanner" class="complete-banner" hidden>
-              <strong>Gelöst</strong>
-              <span id="completeSummary"></span>
-            </div>
+          <div class="puzzle-workbench">
+            <section class="piece-tray-panel" aria-labelledby="trayTitle">
+              <div class="area-heading">
+                <p class="section-label" id="trayTitle">Gemischte Teile</p>
+                <span id="trayCount">9</span>
+              </div>
+              <div id="pieceTray" class="piece-tray" aria-label="Gemischte Puzzleteile"></div>
+            </section>
+
+            <section class="table-panel" aria-labelledby="tableTitle">
+              <div class="area-heading">
+                <p class="section-label" id="tableTitle">Puzzle-Tisch</p>
+                <span id="placedCount">0/9</span>
+              </div>
+              <div class="puzzle-table-wrap">
+                <div id="puzzleBoard" class="puzzle-table" aria-label="Puzzle-Tisch"></div>
+                <div id="completeBanner" class="complete-banner" hidden>
+                  <strong>Gelöst</strong>
+                  <span id="completeSummary"></span>
+                </div>
+              </div>
+            </section>
           </div>
         </section>
 
@@ -60,8 +76,11 @@
           </section>
 
           <section class="panel-section">
-            <p class="section-label">Status</p>
-            <div class="stat-grid">
+            <div class="section-row">
+              <p class="section-label">Status</p>
+              <button id="statusToggle" class="mini-toggle" type="button" aria-pressed="true">Status ausblenden</button>
+            </div>
+            <div id="statGrid" class="stat-grid">
               <div>
                 <span>Züge</span>
                 <strong id="moveCount">0</strong>
