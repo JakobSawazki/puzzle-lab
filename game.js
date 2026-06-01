@@ -14,19 +14,19 @@ const completeSummary = document.querySelector("#completeSummary");
 
 const samples = [
   {
-    id: "puzzle-lab",
-    name: "Puzzle Lab",
-    src: "./assets/samples/puzzle-lab.jpg"
+    id: "forest-stream",
+    name: "Waldlichtung",
+    src: "./assets/samples/forest-stream.jpg"
   },
   {
-    id: "circuit-workshop",
-    name: "Circuit Desk",
-    src: "./assets/samples/circuit-workshop.jpg"
+    id: "mountain-lake",
+    name: "Bergsee",
+    src: "./assets/samples/mountain-lake.jpg"
   },
   {
-    id: "neon-city",
-    name: "Neon City",
-    src: "./assets/samples/neon-city.jpg"
+    id: "coastal-meadow",
+    name: "Küstenwiese",
+    src: "./assets/samples/coastal-meadow.jpg"
   }
 ];
 

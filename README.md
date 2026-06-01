@@ -10,7 +10,7 @@ Puzzle Lab ist ein Browser-Puzzle-Game für Games Lab von Sawazki Electronics.
 ## Features
 
 - Eigenes Bild hochladen und automatisch in ein quadratisches Puzzle umwandeln.
-- Beispielmotive, falls kein eigenes Bild verwendet werden soll.
+- Acryl-Naturmotive, falls kein eigenes Bild verwendet werden soll.
 - Schwierigkeitsstufen:
   - Leicht: 3 x 3, 9 Teile
   - Mittel: 4 x 4, 16 Teile

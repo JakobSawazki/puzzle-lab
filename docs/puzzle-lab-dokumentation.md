@@ -30,11 +30,11 @@ Live-Seiten:
 ## Assets
 
 - `assets/games-lab-logo.png`: Games-Lab-Logo.
-- `assets/samples/puzzle-lab.jpg`: Beispielmotiv Puzzle Lab.
-- `assets/samples/circuit-workshop.jpg`: Beispielmotiv Circuit Desk.
-- `assets/samples/neon-city.jpg`: Beispielmotiv Neon City.
+- `assets/samples/forest-stream.jpg`: Acryl-Naturmotiv Waldlichtung.
+- `assets/samples/mountain-lake.jpg`: Acryl-Naturmotiv Bergsee.
+- `assets/samples/coastal-meadow.jpg`: Acryl-Naturmotiv Küstenwiese.
 
-Die Beispielbilder wurden als Rasterbilder generiert und lokal ins Projekt kopiert.
+Die Beispielbilder wurden als Acryl-Natur-Rasterbilder generiert und lokal ins Projekt kopiert.
 
 ## Technischer Aufbau
 
@@ -43,9 +43,9 @@ puzzle-lab/
   assets/
     games-lab-logo.png
     samples/
-      circuit-workshop.jpg
-      neon-city.jpg
-      puzzle-lab.jpg
+      coastal-meadow.jpg
+      forest-stream.jpg
+      mountain-lake.jpg
   docs/
     puzzle-lab-dokumentation.md
   game.js
@@ -58,7 +58,8 @@ puzzle-lab/
 
 | Version | Commit | Inhalt |
 | --- | --- | --- |
-| v0.1 | aktueller Stand | Erstes Puzzle Lab mit Upload, Beispielbildern und drei Schwierigkeitsstufen |
+| v0.1 | `733979c` | Erstes Puzzle Lab mit Upload, Beispielbildern und drei Schwierigkeitsstufen |
+| v0.2 | aktueller Stand | Futuristische Beispielbilder durch Acryl-Naturmotive ersetzt |
 
 ## Lokale Entwicklung
 
