@@ -5,7 +5,7 @@ Puzzle Lab ist ein Browser-Puzzle-Game für Games Lab von Sawazki Electronics.
 ## Live-Seite
 
 - Puzzle Lab: https://jakobsawazki.github.io/puzzle-lab/
-- Games Lab: https://jakobsawazki.github.io/mini-games/
+- Games Lab: https://jakobsawazki.github.io/games-lab/
 
 ## Features
 
@@ -17,9 +17,10 @@ Puzzle Lab ist ein Browser-Puzzle-Game für Games Lab von Sawazki Electronics.
   - Schwer: 6 x 6, 36 Teile
 - Echte Jigsaw-Optik mit Laschen und Aussparungen.
 - Eigenes Puzzle-Lab-Logo im Spiel-Header.
-- Aktualisiertes Games-Lab-Logo im Brand-Bereich.
+- Zentrales Games-Lab-Logo im Brand-Bereich, geladen aus dem Games-Lab-Projekt.
 - Gemischte Teileablage und separater Puzzle-Tisch zum Platzieren der Teile.
 - Engerer Puzzle-Tisch, damit die Jigsaw-Teile optisch ineinandergreifen.
+- Ausgeblendete Zielraster-Linien auf dem Puzzle-Tisch.
 - Sortierbare Teileablage zum Vorsortieren.
 - Drag-and-drop sowie Klick-Auswahl für Puzzleteile.
 - Züge, Timer, Teilezahl und Fortschritt, optional ausblendbar.

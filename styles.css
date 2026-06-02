@@ -307,7 +307,7 @@ button {
   aspect-ratio: 1;
   display: grid;
   gap: 0;
-  padding: clamp(10px, 1.1vw, 16px);
+  padding: clamp(8px, 0.9vw, 12px);
   border: 1px solid rgba(66, 232, 212, 0.32);
   border-radius: 8px;
   overflow: visible;
@@ -343,11 +343,11 @@ button {
   min-height: 0;
   display: grid;
   place-items: center;
-  border: 1px dashed rgba(195, 227, 234, 0.1);
+  border: 1px solid transparent;
   border-radius: 0;
   outline: none;
   overflow: visible;
-  background: rgba(7, 16, 21, 0.34);
+  background: transparent;
   transition: border-color 130ms ease, background 130ms ease, box-shadow 130ms ease;
 }
 
@@ -363,12 +363,13 @@ button {
 }
 
 .slot.is-correct {
-  border-color: rgba(141, 255, 98, 0.42);
+  border-color: transparent;
 }
 
 .slot .jigsaw-piece {
   width: 136%;
   max-width: none;
+  transform: translateY(-1.6%);
 }
 
 .jigsaw-piece {
@@ -408,6 +409,15 @@ button {
   filter:
     drop-shadow(0 10px 14px rgba(0, 0, 0, 0.32))
     drop-shadow(0 0 10px rgba(141, 255, 98, 0.3));
+}
+
+.slot .jigsaw-piece:hover,
+.slot .jigsaw-piece:focus-visible {
+  transform: translateY(calc(-1.6% - 2px)) scale(1.02);
+}
+
+.slot .jigsaw-piece.is-selected {
+  transform: translateY(-1.6%) scale(1.04);
 }
 
 .jigsaw-piece[draggable="false"] {

@@ -1,6 +1,6 @@
 # Puzzle Lab Dokumentation
 
-Stand: 2026-06-01
+Stand: 2026-06-02
 
 ## Kurzüberblick
 
@@ -9,7 +9,7 @@ Puzzle Lab ist das zweite Live-Game im Games Lab. Nutzer können ein eigenes Bil
 Live-Seiten:
 
 - Puzzle Lab: https://jakobsawazki.github.io/puzzle-lab/
-- Games Lab: https://jakobsawazki.github.io/mini-games/
+- Games Lab: https://jakobsawazki.github.io/games-lab/
 
 ## Spielprinzip
 
@@ -20,6 +20,7 @@ Live-Seiten:
 - Spieler ziehen oder klicken Teile aus der Ablage auf den Puzzle-Tisch.
 - Falsch platzierte Teile bleiben sichtbar liegen und können erneut bewegt werden.
 - Der Puzzle-Tisch nutzt engere Slots, damit Laschen und Aussparungen optisch ineinandergreifen.
+- Die Zielraster-Linien sind ausgeblendet, damit der Tisch ruhiger und natürlicher wirkt.
 - Das Puzzle ist gelöst, wenn jedes Teil an seiner Originalposition liegt.
 - Die Abschlussanzeige erscheint erst nach vollständig korrekt gelöstem Puzzle.
 
@@ -43,7 +44,7 @@ Live-Seiten:
 
 ## Assets
 
-- `assets/games-lab-logo.png`: Gemeinsames Games-Lab-Logo mit Labor- und Gaming-Motiv.
+- Gemeinsames Games-Lab-Logo: wird zentral aus `https://jakobsawazki.github.io/games-lab/assets/games-lab-logo.png` geladen.
 - `assets/puzzle-lab-logo.png`: Eigenes Puzzle-Lab-Logo für Header und Browser-Icon.
 - `assets/samples/forest-stream.jpg`: Acryl-Naturmotiv Waldlichtung.
 - `assets/samples/mountain-lake.jpg`: Acryl-Naturmotiv Bergsee.
@@ -59,7 +60,6 @@ Die Beispielbilder wurden als Rasterbilder generiert und lokal ins Projekt kopie
 ```text
 puzzle-lab/
   assets/
-    games-lab-logo.png
     puzzle-lab-logo.png
     samples/
       coastal-meadow.jpg
@@ -85,7 +85,9 @@ puzzle-lab/
 | v0.3 | `4d8cafd` | Jigsaw-Teile, separate Ablage, Puzzle-Tisch, ausblendbarer Status und drei Tiermotive |
 | v0.4 | `1473594` | Eigenes Puzzle-Lab-Logo und links ausgerichtete Stage-Überschrift |
 | v0.5 | `2e7222e` | Aktualisiertes gemeinsames Games-Lab-Logo |
-| v0.6 | aktueller Stand | Engerer Puzzle-Tisch, sortierbare Ablage und ausblendbare Bildbereiche |
+| v0.6 | `3002613` | Engerer Puzzle-Tisch, sortierbare Ablage und ausblendbare Bildbereiche |
+| v0.7 | `7b6a72b` | Cache-Buster für Puzzle-Lab-Assets |
+| v0.8 | aktueller Stand | Games-Lab-Logo aus zentralem Games-Lab-Asset geladen, Zielraster ausgeblendet und Puzzle-Board feiner ausgerichtet |
 
 ## Lokale Entwicklung
 
