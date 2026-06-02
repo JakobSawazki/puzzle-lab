@@ -67,13 +67,18 @@
         </section>
 
         <aside class="control-panel" aria-label="Puzzle Einstellungen">
-          <section class="panel-section">
-            <p class="section-label">Bild</p>
-            <label class="upload-drop">
-              <input id="imageUpload" type="file" accept="image/*">
-              <span>Eigenes Bild hochladen</span>
-            </label>
-            <div id="sampleList" class="sample-list" aria-label="Beispielbilder"></div>
+          <section class="panel-section" id="imageChoicesPanel">
+            <div class="section-row">
+              <p class="section-label">Bild</p>
+              <button id="imageChoicesToggle" class="mini-toggle" type="button" aria-pressed="true">Bildauswahl ausblenden</button>
+            </div>
+            <div id="imageChoicesBody" class="panel-body">
+              <label class="upload-drop">
+                <input id="imageUpload" type="file" accept="image/*">
+                <span>Eigenes Bild hochladen</span>
+              </label>
+              <div id="sampleList" class="sample-list" aria-label="Beispielbilder"></div>
+            </div>
           </section>
 
           <section class="panel-section">
@@ -106,14 +111,19 @@
             </div>
           </section>
 
-          <section class="panel-section">
-            <p class="section-label">Vorschau</p>
-            <img id="previewImage" class="preview-image" src="./assets/samples/forest-stream.jpg" alt="Aktuelles Puzzle-Motiv">
+          <section class="panel-section" id="previewPanel">
+            <div class="section-row">
+              <p class="section-label">Motiv-Vorschau</p>
+              <button id="previewPanelToggle" class="mini-toggle" type="button" aria-pressed="true">Motiv ausblenden</button>
+            </div>
+            <div id="previewPanelBody" class="panel-body">
+              <img id="previewImage" class="preview-image" src="./assets/samples/forest-stream.jpg" alt="Aktuelles Puzzle-Motiv">
+            </div>
           </section>
 
           <div class="panel-actions">
             <button id="shuffleButton" class="primary-button" type="button">Neu mischen</button>
-            <button id="previewToggle" class="secondary-button" type="button" aria-pressed="false">Vorschau zeigen</button>
+            <button id="previewToggle" class="secondary-button" type="button" aria-pressed="false">Tisch-Vorschau zeigen</button>
           </div>
         </aside>
       </main>

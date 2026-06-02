@@ -16,8 +16,10 @@ Live-Seiten:
 - Das aktuelle Bild wird im Browser als quadratisches Puzzle-Motiv verwendet.
 - Die Grafik wird in echte Jigsaw-Teile mit Laschen und Aussparungen geteilt.
 - Alle Teile starten gemischt in einer eigenen Teileablage.
+- Die Teileablage ist sortierbar, damit Spieler Puzzleteile vorsortieren können.
 - Spieler ziehen oder klicken Teile aus der Ablage auf den Puzzle-Tisch.
 - Falsch platzierte Teile bleiben sichtbar liegen und können erneut bewegt werden.
+- Der Puzzle-Tisch nutzt engere Slots, damit Laschen und Aussparungen optisch ineinandergreifen.
 - Das Puzzle ist gelöst, wenn jedes Teil an seiner Originalposition liegt.
 - Die Abschlussanzeige erscheint erst nach vollständig korrekt gelöstem Puzzle.
 
@@ -37,6 +39,7 @@ Live-Seiten:
 - Alternativ ein Teil per Drag-and-drop auf den Tisch ziehen.
 - Ein bereits platziertes Teil kann zurück in die Ablage gezogen oder durch ein anderes Teil ersetzt werden.
 - Statuswerte wie Zeit, Züge und Fortschritt können ausgeblendet werden.
+- Bildauswahl und Motiv-Vorschau können ebenfalls ausgeblendet werden.
 
 ## Assets
 
@@ -81,7 +84,8 @@ puzzle-lab/
 | v0.2 | `205067e` | Futuristische Beispielbilder durch Acryl-Naturmotive ersetzt |
 | v0.3 | `4d8cafd` | Jigsaw-Teile, separate Ablage, Puzzle-Tisch, ausblendbarer Status und drei Tiermotive |
 | v0.4 | `1473594` | Eigenes Puzzle-Lab-Logo und links ausgerichtete Stage-Überschrift |
-| v0.5 | aktueller Stand | Aktualisiertes gemeinsames Games-Lab-Logo |
+| v0.5 | `2e7222e` | Aktualisiertes gemeinsames Games-Lab-Logo |
+| v0.6 | aktueller Stand | Engerer Puzzle-Tisch, sortierbare Ablage und ausblendbare Bildbereiche |
 
 ## Lokale Entwicklung
 

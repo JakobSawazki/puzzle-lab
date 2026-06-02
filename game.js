@@ -4,8 +4,12 @@ const trayCount = document.querySelector("#trayCount");
 const placedCount = document.querySelector("#placedCount");
 const imageUpload = document.querySelector("#imageUpload");
 const sampleList = document.querySelector("#sampleList");
+const imageChoicesToggle = document.querySelector("#imageChoicesToggle");
+const imageChoicesBody = document.querySelector("#imageChoicesBody");
 const difficultyButtons = document.querySelector("#difficultyButtons");
 const previewImage = document.querySelector("#previewImage");
+const previewPanelToggle = document.querySelector("#previewPanelToggle");
+const previewPanelBody = document.querySelector("#previewPanelBody");
 const previewToggle = document.querySelector("#previewToggle");
 const shuffleButton = document.querySelector("#shuffleButton");
 const statusToggle = document.querySelector("#statusToggle");
@@ -75,6 +79,8 @@ let state = {
   solved: false,
   previewMode: false,
   statsVisible: true,
+  imageChoicesVisible: true,
+  previewPanelVisible: true,
   edgeMap: null,
   puzzleId: 0
 };
@@ -150,6 +156,22 @@ function removeFromTrayOrder(pieceId) {
 function addToTrayOrder(pieceId) {
   removeFromTrayOrder(pieceId);
   state.trayOrder.push(pieceId);
+}
+
+function insertIntoTrayOrder(pieceId, beforePieceId = null) {
+  removeFromTrayOrder(pieceId);
+  if (!beforePieceId || beforePieceId === pieceId) {
+    state.trayOrder.push(pieceId);
+    return;
+  }
+
+  const targetIndex = state.trayOrder.indexOf(beforePieceId);
+  if (targetIndex === -1) {
+    state.trayOrder.push(pieceId);
+    return;
+  }
+
+  state.trayOrder.splice(targetIndex, 0, pieceId);
 }
 
 function isSolved() {
@@ -382,20 +404,21 @@ function placePiece(pieceId, slotIndex) {
   renderAll();
 }
 
-function returnPieceToTray(pieceId) {
+function returnPieceToTray(pieceId, beforePieceId = null) {
   const piece = getPieceById(pieceId);
   if (!piece || state.solved) {
     return;
   }
 
   if (piece.currentSlot === null) {
+    insertIntoTrayOrder(piece.id, beforePieceId);
     state.selectedPieceId = null;
     renderAll();
     return;
   }
 
   piece.currentSlot = null;
-  addToTrayOrder(piece.id);
+  insertIntoTrayOrder(piece.id, beforePieceId);
   state.moves += 1;
   state.selectedPieceId = null;
   renderAll();
@@ -490,9 +513,11 @@ function handleBoardDrop(event) {
 function handleTrayDrop(event) {
   event.preventDefault();
   const pieceId = state.draggedPieceId || event.dataTransfer.getData("text/plain");
+  const targetPiece = event.target.closest(".jigsaw-piece");
+  const targetPieceId = targetPiece?.dataset.pieceId;
 
   if (pieceId) {
-    returnPieceToTray(pieceId);
+    returnPieceToTray(pieceId, targetPieceId && targetPieceId !== pieceId ? targetPieceId : null);
   }
 
   state.draggedPieceId = null;
@@ -544,6 +569,20 @@ function syncStatusVisibility() {
   statusToggle.textContent = state.statsVisible ? "Status ausblenden" : "Status einblenden";
 }
 
+function syncImageChoicesVisibility() {
+  imageChoicesBody.hidden = !state.imageChoicesVisible;
+  imageChoicesToggle.setAttribute("aria-pressed", state.imageChoicesVisible.toString());
+  imageChoicesToggle.textContent = state.imageChoicesVisible
+    ? "Bildauswahl ausblenden"
+    : "Bildauswahl einblenden";
+}
+
+function syncPreviewPanelVisibility() {
+  previewPanelBody.hidden = !state.previewPanelVisible;
+  previewPanelToggle.setAttribute("aria-pressed", state.previewPanelVisible.toString());
+  previewPanelToggle.textContent = state.previewPanelVisible ? "Motiv ausblenden" : "Motiv einblenden";
+}
+
 function prepareImage(src, name, { objectUrl = false } = {}) {
   if (state.objectUrl && state.objectUrl !== src) {
     URL.revokeObjectURL(state.objectUrl);
@@ -568,7 +607,7 @@ async function newPuzzle({ keepImage = true } = {}) {
   state.solved = false;
   state.previewMode = false;
   previewToggle.setAttribute("aria-pressed", "false");
-  previewToggle.textContent = "Vorschau zeigen";
+  previewToggle.textContent = "Tisch-Vorschau zeigen";
   completeBanner.hidden = true;
 
   if (!keepImage || !state.imageData) {
@@ -580,6 +619,8 @@ async function newPuzzle({ keepImage = true } = {}) {
   renderSamples();
   renderDifficulties();
   syncStatusVisibility();
+  syncImageChoicesVisibility();
+  syncPreviewPanelVisibility();
   renderAll();
 }
 
@@ -617,7 +658,7 @@ async function handleUpload(event) {
 function togglePreview() {
   state.previewMode = !state.previewMode;
   previewToggle.setAttribute("aria-pressed", state.previewMode.toString());
-  previewToggle.textContent = state.previewMode ? "Vorschau ausblenden" : "Vorschau zeigen";
+  previewToggle.textContent = state.previewMode ? "Tisch-Vorschau ausblenden" : "Tisch-Vorschau zeigen";
   renderAll();
 }
 
@@ -653,9 +694,19 @@ statusToggle.addEventListener("click", () => {
   state.statsVisible = !state.statsVisible;
   syncStatusVisibility();
 });
+imageChoicesToggle.addEventListener("click", () => {
+  state.imageChoicesVisible = !state.imageChoicesVisible;
+  syncImageChoicesVisibility();
+});
+previewPanelToggle.addEventListener("click", () => {
+  state.previewPanelVisible = !state.previewPanelVisible;
+  syncPreviewPanelVisibility();
+});
 
 prepareImage(state.imageSrc, state.imageName);
 renderSamples();
 renderDifficulties();
 syncStatusVisibility();
+syncImageChoicesVisibility();
+syncPreviewPanelVisibility();
 newPuzzle({ keepImage: true });
